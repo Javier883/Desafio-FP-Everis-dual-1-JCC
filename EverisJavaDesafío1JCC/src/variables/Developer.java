@@ -49,7 +49,11 @@ public class Developer {
 	 * @param vacaciones the vacaciones to set
 	 */
 	public void setVacaciones(int vacaciones) {
-		this.vacaciones -= vacaciones;
+		if(vacaciones>21 | this.vacaciones<vacaciones) {
+		System.out.println("No tiene tantos dias de vacaciones");
+		}else {
+			this.vacaciones -= vacaciones;
+		}
 	}
 
 	/**
