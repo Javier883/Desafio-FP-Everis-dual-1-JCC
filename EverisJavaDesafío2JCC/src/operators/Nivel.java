@@ -2,7 +2,19 @@ package operators;
 
 import java.util.Scanner;
 
+/**
+ * Clase nivel con un método para elegir uno (El nivel por defecto será 1)
+ * 
+ * @author Campos
+ *
+ */
 public class Nivel extends Objeto {
+
+	/**
+	 * @param nivel
+	 * @param altura
+	 * @param puntuación Máxima
+	 */
 
 	private int nivel = 1;
 	private int altura = 10;
@@ -10,6 +22,11 @@ public class Nivel extends Objeto {
 
 	public Nivel() {
 	}
+
+	/**
+	 * Método con el cual podremos seleccionar un nivel, y se ajustarán los
+	 * parámetros como es debido dependiendo de este
+	 */
 
 	public void seleccionar_nivel() {
 

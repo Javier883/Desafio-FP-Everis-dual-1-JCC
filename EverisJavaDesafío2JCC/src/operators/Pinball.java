@@ -2,16 +2,32 @@ package operators;
 
 import java.util.Scanner;
 
+/**
+ * Clase pinball en la cual se desarrolla el menú principal y el algoritmo de
+ * juego.
+ * 
+ * @author Campos
+ *
+ */
 public class Pinball {
 
 	public Pinball() {
 	}
 
-	public void jugar() {
+	/**
+	 * Método menú donde podrás elegir si quieres cambiar el equipo, el nivel o
+	 * jugar del tirón
+	 */
+
+	public void menu() {
 
 		int vidas = 5;
 
 		int pt = 0;
+
+		int i = 0;
+
+		int x = 2;
 
 		Scanner sc = new Scanner(System.in);
 
@@ -31,6 +47,8 @@ public class Pinball {
 			String opcion = sc.nextLine();
 
 			switch (opcion) {
+			// Caso 1 con un algoritmo basado en tiradas ficticias de dados de 6 y 10 caras
+			// para calcular la puntuación
 			case "1":
 				while (pt < n.getPuntuacionMax() && vidas > 0) {
 					int pta;
@@ -68,7 +86,7 @@ public class Pinball {
 						} else if (G == 7) {
 							int nv1 = (int) (Math.random() * (10 - 1));
 							pta = +7 * nv1;
-							
+
 						} else if (G == 8) {
 							int nv1 = (int) (Math.random() * (10 - 1));
 							pta = +8 * nv1;
@@ -89,26 +107,42 @@ public class Pinball {
 						System.out.println("Puntución total= " + pt);
 						System.out.println("");
 
+						// Bucle FOR que te dará una vida extra si en la tirada sacas más de un 20
+						for (i = 1; i < x; i++) {
+							if (pta > 20) {
+								vidas++;
+								System.out.println("Vida extra for you: " + vidas);
+							}
+						}
+
 					} else {
 						vidas--;
 						System.out.println("Has perdido una vida máquina, te quedan: " + vidas);
 					}
 				}
 
+				vidas = 5;
+				pt = 0;
+
+				// Filtro IF que basandose en el porqué se salio del bucle te dirá si has ganado
+				// o perdido
+
 				if (vidas == 0) {
 					System.err.println("Acabas de perder sin tener que hacer nada, que monstruo");
 				} else {
 					System.err.println("Acabas de ganar sin hacer nada... Muy bien , muuuuy bien (Sacárstico)");
 				}
-				vidas = 5;
-				pt = 0;
+
 				break;
 			case "2":
+				// Caso 2 que llama al método cambiar equipo
 				b.seleccionar_equipo();
 				break;
 			case "3":
+				// Caso 3 que llama al método seleccionar nivel
 				n.seleccionar_nivel();
 				break;
+			// Caso 0 que cierra el programa
 			case "0":
 
 				System.exit(0);

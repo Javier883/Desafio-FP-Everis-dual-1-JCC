@@ -1,12 +1,17 @@
 package operators;
 
 /**
- * Clase padre objeto 
+ * Clase padre objeto para demostración herencia (no se usa)
+ * 
  * @author Campos
  *
  */
 public class Objeto {
-	
+
+	/**
+	 * @param nombre
+	 */
+
 	private String nombre = null;
 
 	/**
@@ -22,8 +27,5 @@ public class Objeto {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
-	
-	
 
 }
