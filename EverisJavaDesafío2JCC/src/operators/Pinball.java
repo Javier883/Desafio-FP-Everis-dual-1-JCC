@@ -121,9 +121,6 @@ public class Pinball {
 					}
 				}
 
-				vidas = 5;
-				pt = 0;
-
 				// Filtro IF que basandose en el porqué se salio del bucle te dirá si has ganado
 				// o perdido
 
@@ -132,6 +129,9 @@ public class Pinball {
 				} else {
 					System.err.println("Acabas de ganar sin hacer nada... Muy bien , muuuuy bien (Sacárstico)");
 				}
+
+				vidas = 5;
+				pt = 0;
 
 				break;
 			case "2":
